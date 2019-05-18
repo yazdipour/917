@@ -1,4 +1,14 @@
-# 917
+# 917 Program 
+
+## Instalation
+
+* Burn MSDOS Img on a flash or floppy...
+* Install MS-DOS on the other HDD/FLash/...
+* Copy 917 Archive File into the HDD/Flash except DOSFolder/COMMAND/IO/MSDOS files
+* Then try
+* If it didnt worked. Create another partition, under 500MB FAT - Primary, for `d:` drive
+* Then try
+* If didn't worked, edit AUTOEXEC or CONFIG.SYS
 
 ## Drives
 
