@@ -7,7 +7,11 @@
 
 ![partitions](partitions.png)
 
-## Unimportant stuff / Does not need to be exactparti
+## AUTOEXEC
+
+To run the app without machine use `cu m1 d2`, else `cu w d0 g1 m1`
+
+## Unimportant stuff - Does not need to be exactly the same
 
 * DOS folder
 * COMMAND.EXE
