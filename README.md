@@ -17,10 +17,11 @@
 
 ![partitions](partitions.png)
 
-## AUTOEXEC
+## AUTOEXEC.BAT
 
-- To run the app without machine use `cu m1 d2`, else `cu w d0 g1 m1`
-- `d1` for print-on
+- Run without Machine `cu m1 d2`
+- Run in Machine `cu w d0 g1 m1`
+- `d1` is for print-on, `d0` print-off
 
 ## Unimportant stuff - Does not need to be exactly the same
 
@@ -39,7 +40,6 @@ rem BUFFERS=20
 
 BUFFERS=30
 FILES=40
-
 
 DEVICE=cd1.SYS /D:banana
 
