@@ -2,64 +2,26 @@
 
 ## Instalation
 
-- Burn MSDOS Img on a flash or floppy...
-- Install MS-DOS on the other HDD/FLash/...
-- Copy 917 Archive File into the HDD/Flash except DOSFolder/COMMAND/IO/MSDOS files
-- Then try
-- If it didnt worked. Create another partition, under 500MB FAT - Primary, for `d:` drive
-- Then try
-- If didn't worked, edit AUTOEXEC or CONFIG.SYS
+- Download the latest VHD files from <https://github.com/yazdipour/917/releases>
+- Use RUFUS to write VHD on your storage device
 
-## Drives
+## Configuration
 
-- Need to be less than 2 GB
-- 2 Partition - FAT - Primary
+To change VHD content, open `Disk Management` and click `Action > Attach VHD` to mount the VHD file as a hard drive.
 
-![partitions](partitions.png)
+After changing VHD content, you should unmount it from Disk Managment window and it will be ready to use.
 
-## AUTOEXEC.BAT
+### AUTOEXEC.BAT
 
-- Run without Machine `cu m1 d2`
-- Run in Machine `cu w d0 g1 m1`
+This is already predefined in VHD files. 
+
+But if you want to change it:
+
+- To run without Machine `cu m1 d2`
+- To run on a Machine `cu w d0 g1 m1`
 - `d1` is for print-on, `d0` print-off
 
-## Unimportant stuff - Does not need to be exactly the same
+## How did i make it work
 
-- DOS folder
-- COMMAND.EXE
-- IO.SYS
-- MSDOS.SYS
-
-## CONFIG.SYS needed to merge
-
-```
-DEVICE=HIMEM.SYS /testmem:off /machine:1
-rem  /machine:1 is for 917
-rem FILES=30
-rem BUFFERS=20
-
-BUFFERS=30
-FILES=40
-
-DEVICE=cd1.SYS /D:banana
-
-rem DEVICE=cd1.SYS /D:banana /P:1f0,14
-rem DEVICE=cd1.SYS /D:banana /P:170,15
-rem DEVICE=cd1.SYS /D:banana /P:170,10
-rem DEVICE=cd1.SYS /D:banana /P:1e8,12
-rem DEVICE=cd1.SYS /D:banana /P:1e8,11
-rem DEVICE=cd1.SYS /D:banana /P:168,10
-rem DEVICE=cd1.SYS /D:banana /P:168,9
-
-LASTDRIVE=Z
-
-rem 917
-rem 917
-rem 917
-
-REM DEVICE=C:\DOS\EMM386.EXE I=B000-B7FF I=C800-EFFF d=32 NOEMS NOHI
-DOS=HIGH
-SHELL=C:\DOS\COMMAND.COM /P /E:512
-DEVICE=C:\DOS\SETVER.EXE
-DEVICE=C:\DOS\RAMDRIVE.SYS 8000 /E
-```
+Using three MSDOS 6.2 img files, I was able to create a MSDOS virtual environment in VirtualBox.
+After that I used the same VHD file and attached it to my system, copied all the 917 files (except `DOS folder, COMMAND.EXE, IO.SYS, MSDOS.SYS`).
